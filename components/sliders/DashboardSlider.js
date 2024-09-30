@@ -191,8 +191,8 @@ const DashboardSlider = memo(
           height="fit-content"
           modalTitle={
             selectedItem
-              ? t("addProcess:updateProcess")
-              : t("addProcess:addNewProcess")
+              ? t("addProcess.updateProcess")
+              : t("addProcess.addNewProcess")
           }
         />
         <CustomModal
@@ -213,7 +213,7 @@ export async function getServerSideProps() {
       
       return {
         props: {
-          initialData: initialData || null, // Ensure it's null if no data is returned
+          initialData: initialData || null, 
         },
       };
     } catch (error) {

@@ -11,11 +11,12 @@ import { useRouter } from "next/router";
 import { useTranslation } from "react-i18next";
 import useWindowDimensions from "@/hooks/useWindowDimensions";
 import moment from "moment";
+import MetaHead from "@/components/common/MetaHead";
 // import Planner from "./Twin/components/Planner";
 
 
 
-const DigitalTwin = observer(({data}) => {
+const DigitalTwin = observer(({ data }) => {
     console.log('data :', data);
   const { t } = useTranslation();
   const [enabled, setEnabled] = useState(true);
@@ -52,6 +53,7 @@ const DigitalTwin = observer(({data}) => {
 
   return (
     <>
+    <MetaHead title={"Digital-Twin"} />
       <div className="w-full h-full flex flex-col">
         <div className="w-full flex items-center border-b border-secondary-100  max-h-[56px] min-h-[56px]">
           <span className="mr-3 md:flex sm:flex xs:flex hidden">
@@ -135,7 +137,7 @@ const DigitalTwin = observer(({data}) => {
 });
 
 
-export const getServerSideProps = async () => {
+export async function getServerSideProps () {
     try {
       const data = await processService.getQueryProcessUtilization();
       return {

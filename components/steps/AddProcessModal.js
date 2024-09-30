@@ -6,7 +6,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { observer } from "mobx-react-lite";
 import { useForm } from "react-hook-form";
 import { processService } from "../../services/process.service";
-import TabModal from "../modals/TabModal";
+import TabModal from "../tabs/TabModal";
 import ProcessInfo from "./ProcessInfo";
 import OperationIcon from "./OperationIcon";
 import ProcessResponsible from "./ProcessResponsible";

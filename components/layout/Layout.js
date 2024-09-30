@@ -2,6 +2,7 @@ import React, { memo, useCallback, useEffect } from "react";
 import { useRouter } from "next/router";
 import { useStore } from "@/hooks/useStore";
 import { observer } from "mobx-react-lite";
+import LeftMenu from "../common/LeftMenu";
 
 const Layout = observer(({children}) => {
   const { auth } = useStore();
@@ -62,7 +63,7 @@ const Layout = observer(({children}) => {
 
   return (
     <div className={`w-screen h-screen flex pl-[80px] md:pl-0 sm:pl-0 xs:pl-0`}>
-      {/* <LeftMenu /> */}
+      <LeftMenu />
 
       <div style={{ backgroundColor: segmentColors().backgroundColor }} className="flex-1 pt-3 flex relative transition-all duration-150 w-full">
         <div
